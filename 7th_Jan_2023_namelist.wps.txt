@@ -1,0 +1,37 @@
+&share
+ wrf_core = 'ARW',
+ max_dom = 3,
+ start_date = '2023-01-06_06:00:00', '2023-01-06_06:00:00', '2023-01-06_06:00:00',
+ end_date   = '2023-01-07_06:00:00', '2023-01-07_05:00:00', '2023-01-07_05:00:00',
+ interval_seconds = 3600,
+/
+
+&geogrid
+ parent_id            = 1, 1, 2
+ parent_grid_ratio    = 1, 3, 3
+ i_parent_start                         = 1, 34, 100,
+ j_parent_start                         = 1, 23, 120,
+ e_we                                   = 178, 325, 427,
+ e_sn                                   = 173, 370, 427,
+ geog_data_res        = 'usgs_30s+utk', 'usgs_30s+utk', 'usgs_30s+utk',
+ dx                   = 900
+ dy                   = 900
+ map_proj             = 'lambert'
+ ref_lat              = 28.566
+ ref_lon              = 77.094
+ truelat1             = 28.566
+ truelat2             = 28.566
+ pole_lat             = 90
+ pole_lon             = 0
+ stand_lon            = 77.094
+ geog_data_path       = '/home/users/choudhury/WPS_GEOG',
+/
+
+&ungrib
+ out_format = 'WPS',
+ prefix = 'FILE',
+/
+
+&metgrid
+ fg_name = 'FILE',
+/
