@@ -3,8 +3,7 @@ Data And Script for "Observed and LES Simulated Turbulence Characteristics Durin
 # Observed and WRF-LES Simulated Turbulence Characteristics During Winter Fog Events  
 *A WiFEX case study over IGI Airport, New Delhi*
 
-[![DOI](https://zenodo.org/badge/DOI/10.xxxx/zenodo.xxxxxxx.svg)](https://doi.org/10.xxxx/zenodo.xxxxxxx)  
-*(Replace with actual Zenodo DOI once generated)*
+[![DOI](https://zenodo.org/badge/1051571602.svg)](https://doi.org/10.5281/zenodo.17067653)
 
 ---
 
