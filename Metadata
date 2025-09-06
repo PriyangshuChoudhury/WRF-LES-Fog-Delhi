@@ -1,0 +1,63 @@
+# WRF-LES Output Metadata
+
+**File:**  
+Coordinate: 
+target_lat = 28.5658
+target_lon = 77.0943
+
+**Simulation setup:**  
+- Case: Fog event, 7 January 2023 (WiFEX, IGI Airport, New Delhi)  
+- Model: WRF v4.6.1, LES configuration with Morrison microphysics  
+- Domain: d03 (100 m resolution, LES)  
+- Time steps: 217 (covering the fog event period)  
+- Vertical levels: 59 (plus staggered for W, PH, PHB)
+
+---
+
+## 📊 Variables Included
+
+### Surface Variables
+| Variable | Description | Units | Notes |
+|----------|-------------|-------|-------|
+| **T2**   | Temperature at 2 m | K | Time mean |
+| **U10**  | U-component wind at 10 m | m s⁻¹ | Time mean |
+| **V10**  | V-component wind at 10 m | m s⁻¹ | Time mean |
+| **EMISS** | Surface emissivity | – | Time mean |
+| **GLW**  | Downward longwave flux at surface | W m⁻² | Time mean |
+| **TSK**  | Surface skin temperature | K | Time mean |
+| **HFX**  | Upward heat flux at surface | W m⁻² | Time mean |
+| **HGT**  | Terrain height | m | Static |
+
+
+---
+
+### Atmospheric Variables
+| Variable | Description | Units | Dimensions | Notes |
+|----------|-------------|-------|------------|-------|
+| **T**    | Perturbation potential temperature (θ – θ₀) | K | Time × bottom_top × south_north × west_east | Time mean |
+| **P**    | Perturbation pressure | Pa | Time × bottom_top × south_north × west_east | Time mean |
+| **QVAPOR** | Water vapor mixing ratio | kg kg⁻¹ | Time × bottom_top × south_north × west_east | Time mean |
+| **U**    | X-wind component | m s⁻¹ | Time × bottom_top × south_north × west_east_stag | Staggered in X |
+| **V**    | Y-wind component | m s⁻¹ | Time × bottom_top × south_north_stag × west_east | Staggered in Y |
+| **W**    | Z-wind component | m s⁻¹ | Time × bottom_top_stag × south_north × west_east | Staggered in Z |
+| **PH**   | Perturbation geopotential | m² s⁻² | Time × bottom_top_stag × south_north × west_east | Staggered in Z |
+| **PHB**  | Base-state geopotential | m² s⁻² | Time × bottom_top_stag × south_north × west_east | Staggered in Z |
+| **XLAT** | Latitude | °N | Time × south_north × west_east | Static |
+| **XLONG** | Longitude | °E | Time × south_north × west_east | Static |
+
+
+---
+
+### Subgrid Turbulence (NBA Model Outputs)
+| Variable | Description | Units | Dimensions |
+|----------|-------------|-------|------------|
+| **m11**  | 11 component of NBA subgrid stress tensor | m² s⁻² | Time × bottom_top × south_north × west_east |
+| **m22**  | 22 component of NBA subgrid stress tensor | m² s⁻² | Time × bottom_top × south_north × west_east |
+| **m33**  | 33 component of NBA subgrid stress tensor | m² s⁻² | Time × bottom_top × south_north × west_east |
+
+---
+
+## 📌 Notes  
+- Geopotential (PH + PHB) can be used to derive geometric heights.  
+- Derived products (e.g., turbulence dissipation rate ε, liquid water content LWC, cloud droplet number Nd and Relative Humidity) require post-processing.  
+- Temporal averaging: All variables are stored as time means over the simulation output interval.
